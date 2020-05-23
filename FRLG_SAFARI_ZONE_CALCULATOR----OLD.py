@@ -389,7 +389,7 @@ def pretty_outputs(catch_rate, flee_rate, name):
     print("Odds of capture with the pattern (Bait, Ball) -> ")
     print("(Bait, Ball, Ball) repeating: " + str(odds[0] * 100)[:7] + "%")
     print()
-    odds = pattern_odds_catch_easy(catch_rate, flee_rate,
+    odds = pattern_odds_catch_hard(catch_rate, flee_rate,
                                    'TLTLLLTLLTLLLTLLTLLLTLLTLLLTLLTLLLTLLTLLLL')
     print("Odds of capture with a pattern of (Bait, Ball) ->")
     print("(Bait, Ball, Ball, Ball, Bait, Ball, Ball) Repeating: " +
