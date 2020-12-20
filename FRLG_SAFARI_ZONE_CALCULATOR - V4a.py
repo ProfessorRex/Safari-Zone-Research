@@ -363,7 +363,7 @@ def pretty_outputs(catch_rate=30, flee_rate=125, name='CHANSEY'):
     odds_bb = pattern_odds_catch('TLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL', 0, catch_rate, flee_rate)
     print("Odds of capture with one bait followed by only balls: " +
           str(round((odds_bb[0] * 100), 2)) + "%")
-    if (flee_rate >= 100):
+    if (flee_rate >= 100 or (flee_rate == 75 and catch_rate < 90)):
         odds = get_best_pattern(30, '', fleet_ub)
     else:
         odds = [('L' * 30), odds_b[0], odds_b[1]]
@@ -380,6 +380,15 @@ def all_pretty():
     pretty_outputs(30, 125, 'CHANSEY')
     pretty_outputs(45, 125, 'DRAGONAIR, PINSIR, SCYTHER, TAUROS, N KANGASKHAN')
     pretty_outputs(45, 100, 'DRATINI')
+    pretty_outputs(255, 25, 'MAGIKARP')
+    pretty_outputs(60, 75, 'SEAKING')
+    pretty_outputs(75, 75, 'PARASECT & VENOMOTH')
+    pretty_outputs(90, 75, 'EXEGGCUTE')
+    pretty_outputs(120, 75, 'NIDORINO, NIDORINA, & RHYHORN')
+    pretty_outputs(190, 50, 'PARAS, VENONAT, PSYDUCK, SLOWPOKE, & DODUO')
+    pretty_outputs(225, 50, 'GOLDEEN')
+    pretty_outputs(235, 50, 'NIDORAN AND NIDORAN')
+    pretty_outputs(255, 50, 'POLIWAG')
 
 def make_pattern(number, balls, pattern=''):
     balls = balls - pattern.count('L')
